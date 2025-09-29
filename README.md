@@ -1,83 +1,41 @@
 # OnlineStoreAPI-Framework
 
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
+![pytest](https://img.shields.io/badge/Tested_with-pytest-green?logo=pytest)
+![Allure](https://img.shields.io/badge/Reports-Allure-orange?logo=allure)
+![Status](https://img.shields.io/badge/Build-Passing-brightgreen)
+
 ## Overview
 
-This repository contains a **Python-based API testing framework** designed for validating store-related functionalities. The framework is built with **pytest** and integrates with **Allure reporting** for clear test results. It focuses on REST API testing around user management, authentication, product handling, and order workflows.
+The **OnlineStoreAPI-Framework** is a Python-based **automated testing framework** tailored for validating the **REST APIs of an online store application**.  
+It is designed to ensure that critical backend services like **user management, authentication, product catalog, cart, and order workflows** are reliable and functioning correctly.  
+
+This framework is not just a collection of test cases — it follows **industry best practices**, making it **scalable, maintainable, and CI/CD ready**.  
+It can be easily extended to new APIs and integrated into pipelines for continuous testing.
+
+---
+
+## Why This Framework?  
+
+Modern e-commerce systems rely heavily on APIs. A small bug in login, checkout, or payment APIs can break the customer experience.  
+This project ensures:  
+
+- **Reliability:** Every API is tested for success and failure cases.  
+- **Maintainability:** Clear structure with modular, reusable test cases.  
+- **Scalability:** Add new endpoints without breaking existing ones.  
+- **Professional Reporting:** Test results are available in **HTML** and **Allure interactive dashboards**.  
+
+---
 
 ## Key Features & Benefits
 
-*   **Pytest-based Framework:** Modular and scalable test execution.
-*   **REST API Testing:** Covers core store APIs including login, user, and product endpoints.
-*   **Data-driven Testing:** Test data is separated and reusable.
-*   **Allure Reports:** Generates rich, interactive HTML reports.
-*   **Custom Utilities:** Includes reusable methods for requests, assertions, and setup/teardown.
-*   **CI/CD Friendly:** Can be integrated with GitHub Actions or Jenkins for automated runs.
+- **Pytest-powered:** Test discovery, fixtures, and parallel execution support.  
+- **End-to-End API Testing:** Covers login, user creation, product management, and order checkout.  
+- **Reusable API Client:** Centralized utility to handle HTTP requests and responses.  
+- **Data-driven:** JSON-based input for flexibility in running multiple scenarios.  
+- **Assertions & Validations:** Built-in reusable assertions for response codes and payloads.  
+- **Reporting:**  
+  - **pytest-html** → Generates static HTML reports.  
+  - **Allure** → Interactive dashboards with step-level logs and graphs.  
 
-## Prerequisites & Dependencies
-
-Before you begin, ensure you have the following installed:
-
-*   **Python:** Python 3.8 or higher is recommended.
-*   **pip:** Python package installer.
-*   **pytest:** Install using `pip install pytest`.
-*   **requests:** Install using `pip install requests`.
-*   **pytest-html / Allure-pytest:** For report generation.  
-    ```bash
-    pip install pytest-html allure-pytest
-    ```
-
-Optional:
-*   **Allure Commandline:** Download and add to system PATH for advanced reporting.
-
-## Installation & Setup Instructions
-
-1. **Clone the Repository:**
-    ```bash
-    git clone https://github.com/uditSINGH43/OnlineStoreAPI-Framework.git
-    cd OnlineStoreAPI-Framework
-    ```
-
-2. **Create a Virtual Environment (Recommended):**
-    ```bash
-    python -m venv venv
-    venv\Scripts\activate   # On Windows
-    # source venv/bin/activate  # On Linux/macOS
-    ```
-
-3. **Install Dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. **Configure Environment (Optional):**  
-   Update any environment variables or test data in `config/` or `data/` files as needed.
-
-## Usage Examples & API Documentation
-
-1. **Running Tests:**
-    ```bash
-    pytest -v -s
-    ```
-
-    Generate an HTML report:
-    ```bash
-    pytest --html=report.html
-    ```
-
-    Generate an Allure report:
-    ```bash
-    pytest --alluredir=reports/allure-results
-    allure serve reports/allure-results
-    ```
-
-2. **Example Test Structure:**
-   * `testCases/test_user_tests.py`: Covers user login and registration APIs.
-   * `testCases/test_product_tests.py`: Validates product endpoints.
-   * `utils/common.py`: Helper functions for requests and data handling.
-
-   A typical test:
-   ```python
-   def test_login_valid_user(api_client):
-       response = api_client.post("/login", json={"username": "test", "password": "pass"})
-       assert response.status_code == 200
-       assert "token" in response.json()
+---
