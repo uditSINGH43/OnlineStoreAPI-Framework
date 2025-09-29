@@ -1,0 +1,4 @@
+[35mDEBUG   [0m pytest_dependency:pytest_dependency.py:87 check dependencies of test_update_product in module scope ...
+[35mDEBUG   [0m pytest_dependency:pytest_dependency.py:92 ... add_product succeeded
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): fakestoreapi.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://fakestoreapi.com:443 "PUT /products/10 HTTP/1.1" 200 None

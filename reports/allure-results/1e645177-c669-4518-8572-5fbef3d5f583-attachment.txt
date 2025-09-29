@@ -1,0 +1,2 @@
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): fakestoreapi.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://fakestoreapi.com:443 "DELETE /carts/1 HTTP/1.1" 200 None
